@@ -20,7 +20,7 @@ const GetUsers = (props) => {
                 };
               })
             );
-            console.log("users", users);
+            // console.log("users", users);
           });
     }
   

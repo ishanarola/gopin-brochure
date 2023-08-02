@@ -25,26 +25,26 @@ const UserForm = () => {
     link.click();
   };
   return (
-    <section class="vh-100 gradient-custom fs-4">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+    <section className="vh-100 gradient-custom fs-4">
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div
-              class="card bg-dark text-white"
+              className="card bg-dark text-white"
               style={{ borderRadius: "1rem" }}
             >
-              <div class="card-body p-5 text-center">
-                <div class="mb-md-4 mt-md-4">
-                  <h2 class=" title fs-4 fw-bold mb-4 text-uppercase">Gopin Industrial Park</h2>
+              <div className="card-body p-5 text-center">
+                <div className="mb-md-4 mt-md-4">
+                  <h2 className=" title fs-4 fw-bold mb-4 text-uppercase">Gopin Industrial Park</h2>
                   <form className=" g-3 needs-validation" noValidate>
-                    <div class="input-group flex-nowrap">
-                      <span class="input-group-text fs-5" id="addon-wrapping">
+                    <div className="input-group flex-nowrap">
+                      <span className="input-group-text fs-5" id="addon-wrapping">
                         {" "}
-                        <i class="fas fa-phone fa-flip-horizontal"></i>
+                        <i className="fas fa-phone fa-flip-horizontal"></i>
                       </span>
                       <input
                         type="number"
-                        class="form-control fs-6"
+                        className="form-control fs-6"
                         placeholder="Mobile number"
                         aria-label="mobileNumber"
                         aria-describedby="addon-wrapping"
