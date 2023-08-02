@@ -2,7 +2,7 @@
   "name": "gopin-brochure",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ishanarola.github.io/gopin_brochure",
+  "homepage": "https://ishanarola.github.io/gopin-brochure",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
