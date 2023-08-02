@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/gopin-brochure/static/css/main.f262b7c4.css",
+    "main.js": "/gopin-brochure/static/js/main.f9608b33.js",
+    "static/js/787.1624e415.chunk.js": "/gopin-brochure/static/js/787.1624e415.chunk.js",
+    "static/media/Gopin Industrial Park Brochure.pdf": "/gopin-brochure/static/media/Gopin Industrial Park Brochure.097a43d1ff87b7cac536.pdf",
+    "index.html": "/gopin-brochure/index.html",
+    "main.f262b7c4.css.map": "/gopin-brochure/static/css/main.f262b7c4.css.map",
+    "main.f9608b33.js.map": "/gopin-brochure/static/js/main.f9608b33.js.map",
+    "787.1624e415.chunk.js.map": "/gopin-brochure/static/js/787.1624e415.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f262b7c4.css",
+    "static/js/main.f9608b33.js"
+  ]
+}

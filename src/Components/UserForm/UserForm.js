@@ -4,26 +4,39 @@ import { firestore } from "../../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import brochure from "../../Gopin Industrial Park Brochure.pdf";
 const UserForm = () => {
+  const [error, setError] = useState(false);
   const [mobileNumber, setMobileNumber] = useState("");
   const handleInputChange = (e) => {
-    setMobileNumber(e.target.value);
+    let input = e.target.value;
+    var phoneno = /^\d{10}$/;
+    input.match(phoneno)?
+    setError(false):
+    setError(true)
+    setMobileNumber(input);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await addDoc(collection(firestore, "users"), {
-        mobile_number: mobileNumber,
-        created_at: Timestamp.now(),
-      });
-    } catch (err) {
-      console.error(err);
-    }
-    const link = document.createElement('a');
-    link.href = brochure;
-    link.setAttribute('download', 'Gopin Industrial Park Brochure.pdf'); //or any other extension
-    document.body.appendChild(link);
-    link.click();
-  };
+    // var phoneno = /^\d{10}$/;
+    // if (mobileNumber.match(phoneno)) {
+      try {
+        await addDoc(collection(firestore, "users"), {
+          mobile_number: mobileNumber,
+          created_at: Timestamp.now(),
+        });
+      } catch (err) {
+        console.error(err);
+      }
+      const link = document.createElement('a');
+      link.href = brochure;
+      link.setAttribute('download', 'Gopin Industrial Park Brochure.pdf'); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+    //   setError(false);
+    // }
+    // else {
+    //   setError(true);
+    // }
+  }
   return (
     <section className="vh-100 gradient-custom fs-4">
       <div className="container py-5 h-100">
@@ -45,25 +58,27 @@ const UserForm = () => {
                       <input
                         type="number"
                         className="form-control fs-6"
-                        placeholder="Mobile number"
+                        placeholder="Please enter your mobile number"
                         aria-label="mobileNumber"
                         aria-describedby="addon-wrapping"
                         required
                         onChange={(e) => handleInputChange(e)}
                       />
+
+                    </div>
+                    {error &&
                       <div className="invalid-feedback">
                         Please provide a valid phone number.
                       </div>
-                    </div>
-                    
-                      <button
-                        className="btn btn-outline-light mt-4 px-4"
-                        type="submit"
-                        disabled={!mobileNumber && "disabled" }
-                        onClick={(e) => handleSubmit(e)}
-                      >
-                        Submit
-                      </button>
+                    }
+                    <button
+                      className="btn btn-outline-light mt-4 px-4"
+                      type="submit"
+                      disabled={(!mobileNumber || error) ? "disabled":""}
+                      onClick={(e) => handleSubmit(e)}
+                    >
+                      Submit
+                    </button>
                   </form>
                   {/* <div className="col-md-6"> */}
                   {/* <label
